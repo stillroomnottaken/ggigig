@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% from "partials/macros.html" import cta with context %}
+{% block title %}{{ L('Processed Products', 'Produk Olahan') }}{% endblock %}
+{% block desc %}{{ L('Industries that may use the agricultural and bio-based materials BMS trades.', 'Industri yang dapat menggunakan material pertanian dan berbasis hayati yang diperdagangkan BMS.') }}{% endblock %}
+{% block main %}
+<section class="head head-moss">
+  <div class="wrap">
+    <p class="eyebrow">{{ L('Processed Products', 'Produk Olahan') }}</p>
+    <h1>{{ L('Processed Products', 'Produk Olahan') }}</h1>
+    <p class="lead">{{ L('Industries that may use the materials we trade.', 'Industri yang dapat menggunakan material yang kami perdagangkan.') }}</p>
+  </div>
+</section>
+
+{# Industries. Add "image" (file in src/assets/img/industries/) to replace the placeholder, e.g. "food.webp". #}
+{% set industries = [
+  {'slug': 'food',        'image': '', 'en': 'Food & beverage',            'id': 'Makanan & minuman'},
+  {'slug': 'cosmetic',    'image': '', 'en': 'Cosmetic & personal care',   'id': 'Kosmetik & perawatan diri'},
+  {'slug': 'energy',      'image': '', 'en': 'Energy & biofuel',           'id': 'Energi & biofuel'},
+  {'slug': 'chemicals',   'image': '', 'en': 'Chemicals & coatings',       'id': 'Kimia & pelapis'},
+  {'slug': 'industrial',  'image': '', 'en': 'Industrial',                 'id': 'Industri'},
+  {'slug': 'feed',        'image': '', 'en': 'Animal feed & pet food',     'id': 'Pakan ternak & makanan hewan'},
+  {'slug': 'agri',        'image': '', 'en': 'Agriculture & fertilizer',   'id': 'Pertanian & pupuk'},
+  {'slug': 'pharma',      'image': '', 'en': 'Pharmaceutical & health',    'id': 'Farmasi & kesehatan'},
+  {'slug': 'packaging',   'image': '', 'en': 'Packaging & paper',          'id': 'Kemasan & kertas'},
+  {'slug': 'rubber',      'image': '', 'en': 'Rubber, plastics & resins',  'id': 'Karet, plastik & resin'},
+  {'slug': 'construction','image': '', 'en': 'Construction materials',     'id': 'Bahan bangunan'},
+  {'slug': 'textile',     'image': '', 'en': 'Textile & leather',          'id': 'Tekstil & kulit'},
+] %}
+<section class="sec">
+  <div class="wrap">
+    <h2>{{ L('Industries', 'Industri') }}</h2>
+    <div class="ind-grid">
+      {% for i in industries %}
+      {% set name = i[lang] %}
+      <article class="ind">
+        {% if i.image %}<img class="ind-img" src="{{ asset('img/industries/' ~ i.image) }}" alt="{{ name }}" width="640" height="400" loading="lazy" decoding="async">{% else %}<div class="ind-img ind-ph" role="img" aria-label="{{ name }}"></div>{% endif %}
+        <h3>{{ name }}</h3>
+      </article>
+      {% endfor %}
+    </div>
+    <p><a class="btn btn-line btn-sm" href="{{ url('catalogue') }}">{{ L('See the catalogue', 'Lihat katalog') }} &rarr;</a></p>
+  </div>
+</section>
+
+{{ cta(L('Looking for a material?', 'Mencari material?'), L('Tell us what you need, or what you can supply.', 'Beri tahu kami apa yang Anda butuhkan, atau apa yang dapat Anda pasok.')) }}
+{% endblock %}

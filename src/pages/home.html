@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% from "partials/macros.html" import cta, ribbon, contact_btn with context %}
+{% block title %}{{ site.name }} ({{ site.short }}) | {{ L('Agricultural Commodities, Supplied to Your Business', 'Komoditas Pertanian, Dipasok untuk Bisnis Anda') }}{% endblock %}
+{% block desc %}{{ L('Jakarta-based Indonesian trading company. We aggregate agricultural commodities, bio-based and industrial materials from suppliers and sell them to business buyers.', 'Perusahaan perdagangan Indonesia berbasis Jakarta. Kami mengumpulkan komoditas pertanian, bahan berbasis hayati, dan material industri dari pemasok dan menjualnya kepada pembeli bisnis.') }}{% endblock %}
+{% block head %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"{{ site.name }}","alternateName":"{{ site.short }}","foundingDate":"2025","address":{"@type":"PostalAddress","addressLocality":"Jakarta","addressCountry":"ID"},"identifier":"NIB {{ site.nib }}"}</script>
+{% endblock %}
+{% block main %}
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">{{ site.name }} &middot; Jakarta, Indonesia</p>
+      <h1 id="h1">{{ L('Agricultural commodities, supplied to your business', 'Komoditas pertanian, dipasok untuk bisnis Anda') }}</h1>
+      <p class="lead">{{ L('BMS aggregates supply from suppliers across Indonesia and sells it to manufacturers, processors and industrial buyers. Tell us what your business needs and we supply it.', 'BMS mengumpulkan pasokan dari pemasok di seluruh Indonesia dan menjualnya kepada produsen, pengolah, dan pembeli industri. Beri tahu kami kebutuhan bisnis Anda, kami yang memasoknya.') }}</p>
+      <div class="actions">
+        {{ contact_btn('', 'btn-gold btn-lg') }}
+      </div>
+    </div>
+    <svg class="net" viewBox="0 0 440 330" aria-hidden="true" focusable="false">
+      <g class="ln-g">
+        <path class="ln" d="M59 60 C140 60 140 165 182 165"/><path class="ln" d="M59 130 C140 130 140 165 182 165"/>
+        <path class="ln" d="M59 200 C140 200 140 165 182 165"/><path class="ln" d="M59 270 C140 270 140 165 182 165"/>
+        <path class="ln" d="M258 165 C300 165 300 60 381 60"/><path class="ln" d="M258 165 C300 165 300 130 381 130"/>
+        <path class="ln" d="M258 165 C300 165 300 200 381 200"/><path class="ln" d="M258 165 C300 165 300 270 381 270"/>
+      </g>
+      <circle class="src" cx="50" cy="60" r="9"/><circle class="src" cx="50" cy="130" r="9"/><circle class="src" cx="50" cy="200" r="9"/><circle class="src" cx="50" cy="270" r="9"/>
+      <circle class="dst" cx="390" cy="60" r="9"/><circle class="dst" cx="390" cy="130" r="9"/><circle class="dst" cx="390" cy="200" r="9"/><circle class="dst" cx="390" cy="270" r="9"/>
+      <circle class="core" cx="220" cy="165" r="40"/>
+      <text class="core-t" x="220" y="171" text-anchor="middle">BMS</text>
+      <text x="50" y="315" text-anchor="middle">{{ L('Suppliers', 'Pemasok') }}</text>
+      <text x="390" y="315" text-anchor="middle">{{ L('Buyers', 'Pembeli') }}</text>
+    </svg>
+  </div>
+</section>
+
+<div class="ribbons">
+  {{ ribbon('maize', url('catalogue'), L('Catalogue', 'Katalog'), L('%d materials, one supplier' % materials|length, '%d material, satu pemasok' % materials|length), L('Agricultural commodities, bio-based materials and industrial resources.', 'Komoditas pertanian, bahan berbasis hayati, dan sumber daya industri.')) }}
+  {{ ribbon('gold', url('contact') ~ '?intent=have', L('For suppliers', 'Untuk pemasok'), L('Have a harvest or stock to supply?', 'Punya hasil panen atau stok untuk dipasok?'), L('Tell us what you have. BMS aggregates it.', 'Beri tahu kami apa yang Anda miliki. BMS yang mengumpulkannya.')) }}
+  {{ ribbon('moss', url('contact') ~ '?intent=need', L('For buyers', 'Untuk pembeli'), L('Looking for a material?', 'Mencari material?'), L('Tell us what you need and BMS supplies it.', 'Beri tahu kami kebutuhan Anda, BMS yang memasoknya.')) }}
+  {{ ribbon('noir', url('process'), L('How We Work', 'Cara Kerja'), L('Supplier, BMS, business opportunity', 'Pemasok, BMS, peluang bisnis'), L('We aggregate supply and sell it on.', 'Kami mengumpulkan pasokan dan menjualnya.')) }}
+</div>
+
+{{ cta(L('Need a material, or can you supply one?', 'Butuh material, atau bisa memasok?'), L('Buyers order from BMS. Suppliers supply to BMS. Either way, talk to us.', 'Pembeli memesan dari BMS. Pemasok memasok ke BMS. Keduanya, hubungi kami.')) }}
+{% endblock %}
