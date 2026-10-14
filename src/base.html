@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page_title }}{% if key != 'home' %} | {{ site.name }} ({{ site.short }}){% endif %}</title>
   <meta name="description" content="{{ page_desc }}">
-  <meta name="theme-color" content="#90C207">
+  <meta name="theme-color" content="#B5C9A0">
   {% if key != '404' %}
   {% for lng in languages %}
   <link rel="alternate" hreflang="{{ lng }}" href="{{ (site.base_url ~ '/' ~ ('id/' if lng == 'id' else '') ~ fname(lng)) if site.base_url else alt_url(lng) }}">
