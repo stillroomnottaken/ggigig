@@ -52,7 +52,7 @@
         <ul class="menu-links">
           <li><a href="index.html">Beranda</a></li>
           <li><a href="katalog.html">Katalog</a></li>
-          <li><a href="produk-olahan.html">Produk Olahan</a></li>
+          <li><a href="produk-olahan.html">Produk untuk Bisnis</a></li>
           <li><a href="cara-kerja.html">Cara Kerja</a></li>
           <li><a href="tentang.html">Tentang Kami</a></li>
           <li><a href="kontak.html" aria-current="page">Hubungi Kami</a></li>
@@ -68,8 +68,8 @@
 <section class="head head-maize">
   <div class="wrap">
     <p class="eyebrow">Kontak</p>
-    <h1>Apa yang Anda butuhkan, atau ingin Anda pasok?</h1>
-    <p class="lead">Lengkapi informasi di bawah ini. Kami akan menyiapkan pesan WhatsApp secara otomatis agar Anda dapat mengirimkannya langsung ke tim BMS.</p>
+    <h1>Anda ingin menjual atau membeli produk?</h1>
+    <p class="lead">Isi beberapa informasi di bawah ini. Pesan WhatsApp akan disiapkan untuk Anda kirim ke tim BMS.</p>
   </div>
 </section>
 
@@ -80,20 +80,20 @@
         <fieldset>
           <legend>Saya ingin <span class="req" aria-hidden="true">*</span></legend>
           <div class="seg">
-            <label><input type="radio" name="role" value="need" required><span class="seg-box"><b>PEMBELI</b></span></label>
-            <label class="have"><input type="radio" name="role" value="have"><span class="seg-box"><b>PEMASOK</b></span></label>
+            <label><input type="radio" name="role" value="need" required><span class="seg-box"><b>PEMCARI PRODUK</b></span></label>
+            <label class="have"><input type="radio" name="role" value="have"><span class="seg-box"><b>INGIN MENJUAL</b></span></label>
           </div>
         </fieldset>
-        <p class="err">Silakan pilih apakah Anda menghubungi kami sebagai pembeli atau pemasok.</p>
+        <p class="err">Pilih apakah Anda ingin menjual atau membeli produk.</p>
       </div>
 
       <div class="field">
         <label class="l" for="material">Produk <span class="req" aria-hidden="true">*</span></label>
         <select id="material" name="material" required>
-          <option value="">Pilih jenis produk</option>
+          <option value="">Pilih produk</option>
 <option value="cocoa">Kakao</option><option value="candlenuts">Kemiri</option><option value="corn-cobs">Tongkol Jagung</option><option value="rubber-seeds">Biji Karet</option><option value="rubber-seed-oil">Minyak Biji Karet</option><option value="palm-based-derivatives">Turunan Kelapa Sawit</option><option value="cnsl">CNSL</option><option value="Minyak Jelantah">Minyak Jelantah</option><option value="pome">POME</option><option value="petrochemicals">Petrokimia</option>          <option value="other">Produk lain (belum tercantum)</option>
         </select>
-        <p class="err">Pilih jenis produk.</p>
+        <p class="err">Pilih produk.</p>
       </div>
       <div class="field" id="other-wrap" hidden>
         <label class="l" for="other">Sebutkan nama produk</label>
@@ -101,7 +101,7 @@
       </div>
 
       <div class="field">
-        <label class="l" for="qty" data-need="Jumlah yang dibutuhkan" data-have="Jumlah yang tersedia">Jumlah <span class="opt">(opsional)</span></label>
+        <label class="l" for="qty" data-need="Jumlah yang dibutuhkan" data-have="Jumlah yang ingin dijual">Jumlah <span class="opt">(opsional)</span></label>
         <div class="row-q">
           <input id="qty" name="qty" type="number" min="0" step="any" inputmode="decimal" placeholder="20">
           <select name="unit" aria-label="Satuan">
@@ -110,12 +110,12 @@
         </div>
       </div>
       <div class="field">
-        <label class="l" for="location" data-need="Tujuan pengiriman (kota / pelabuhan)" data-have="Lokasi produk (kota / provinsi)">Lokasi <span class="opt">(opsional)</span></label>
+        <label class="l" for="location" data-need="Kota tujuan pengiriman" data-have="Lokasi stok (kota / kabupaten)">Lokasi <span class="opt">(opsional)</span></label>
         <input id="location" name="location" type="text" maxlength="80" autocomplete="off">
       </div>
       <div class="field">
-        <label class="l" for="notes">Spesifikasi dan informasi tambahan <span class="opt">(opsional)</span></label>
-        <textarea id="notes" name="notes" rows="3" maxlength="600" placeholder="misalnya ukuran partikel, kemasan, jadwal kirim"></textarea>
+        <label class="l" for="notes">Catatan tambahan <span class="opt">(opsional)</span></label>
+        <textarea id="notes" name="notes" rows="3" maxlength="600" placeholder="Contoh: kondisi barang atau waktu pengiriman"></textarea>
       </div>
 
       <div class="row-2">
@@ -130,13 +130,13 @@
         </div>
       </div>
       <div class="field">
-        <label class="l" for="phone">Nomor WhatsApp Anda <span class="req" aria-hidden="true">*</span></label>
+        <label class="l" for="phone">Nomor WhatsApp <span class="req" aria-hidden="true">*</span></label>
         <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="0812 3456 7890" required>
-        <p class="err">Periksa kembali nomor WhatsApp yang Anda masukkan.</p>
+        <p class="err">Periksa kembali nomor WhatsApp Anda.</p>
       </div>
 
       <button class="btn btn-forest" type="submit">Lanjutkan ke WhatsApp</button>
-      <p class="hint">WhatsApp akan terbuka dengan draf pesan yang sudah terisi. Periksa pesannya, lalu tekan Kirim untuk menghubungi tim kami.</p>
+      <p class="hint">WhatsApp akan terbuka dengan pesan yang sudah disiapkan. Periksa pesan, lalu tekan Kirim.</p>
       <div class="sent" id="sent" role="status" aria-live="polite">
         <p><b>Pesan Anda siap dilanjutkan di WhatsApp.</b> Tekan Kirim di WhatsApp untuk menyampaikan pesan Anda kepada tim BMS.</p>
         <p><a class="btn btn-gold btn-sm" id="sent-link" href="https://wa.me/6281289090842" target="_blank" rel="noopener">WhatsApp tidak terbuka? Klik di sini</a></p>
