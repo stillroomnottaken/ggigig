@@ -1,7 +1,7 @@
 # BMS website v4 — plan and handover
 
 Static, multi-page, bilingual (EN at `/`, ID at `/id/`). No framework, no jQuery, no CDN.
-Upload the contents of `dist/` to any static host. Everything in `dist/` is generated from `src/`.
+Upload the contents of `dist/` to any static host. Everything in `dist/` is generated from `site-src/`.
 
 ## 1. Single-page vs multi-page (decision: multi-page, 6 pages)
 
@@ -12,7 +12,7 @@ Upload the contents of `dist/` to any static host. Everything in `dist/` is gene
 | Menu | Anchor links to sections that are far apart | Real pages, so the menu can be short and precise |
 | Speed | One big page, reveal animations hide content until scrolled | Each page is ~2.5 KB gzipped HTML; nothing hidden behind scroll animation |
 | SEO | One URL to rank | A URL per topic (Catalogue, Produk Olahan, ...), each with its own title and description |
-| Cost | Cheapest to edit | Header, menu and footer live once in `src/base.html`, so the cost is near zero |
+| Cost | Cheapest to edit | Header, menu and footer live once in `site-src/base.html`, so the cost is near zero |
 
 Why multi-page wins here: the founders want less scroll, the business has two audiences (buyers, and suppliers who supply to BMS)
 and several distinct topics. Multi-page also lets Indonesian visitors land on a page called "Produk Olahan"
@@ -36,7 +36,7 @@ or "Katalog" straight from search.
 bms-v4/
 ├─ site.json              ← WhatsApp number, phone contacts, NIB, social URLs, page slugs, base_url
 ├─ build.py               ← python3 build.py  (needs: pip install jinja2 rcssmin rjsmin)
-├─ src/
+├─ site-src/
 │  ├─ base.html           ← header, slide-in menu, footer, <head>/SEO, hreflang (once)
 │  ├─ pages/              ← home, catalogue, products, process, about, contact, material, 404
 │  ├─ partials/           ← macros.html (buyer/seller buttons, ribbon, CTA), icons.html
@@ -55,10 +55,10 @@ bms-v4/
 
 Editing rules of thumb
 - **Text:** in the templates, English and Indonesian sit side by side: `{{ L('English', 'Indonesia') }}`.
-- **Add a material:** add a row to `src/data/materials.json`, run `python3 build.py`.
-  Give it `"image": "cocoa.webp"` (file in `src/assets/img/`) and it appears on the card automatically.
-- **Industry photos (Processed Products):** drop a file in `src/assets/img/industries/` and set its `"image"` in the `industries` list at the top of `src/pages/products.html`.
-- **Give a material its own page:** set `"detail": true`, then add its content to `src/pages/material.html`.
+- **Add a material:** add a row to `site-src/data/materials.json`, run `python3 build.py`.
+  Give it `"image": "cocoa.webp"` (file in `site-src/assets/img/`) and it appears on the card automatically.
+- **Industry photos (Processed Products):** drop a file in `site-src/assets/img/industries/` and set its `"image"` in the `industries` list at the top of `site-src/pages/products.html`.
+- **Give a material its own page:** set `"detail": true`, then add its content to `site-src/pages/material.html`.
 - **Social icons:** paste URLs into `site.json`. Empty ones are hidden, not left as dead icons.
 - **WhatsApp number:** `site.json` → `whatsapp` (international format, digits only).
 
