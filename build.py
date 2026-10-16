@@ -20,7 +20,7 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
 ROOT = Path(__file__).parent
-SRC, DIST = ROOT / "src", ROOT / "dist"
+SRC, DIST = ROOT / "site-src", ROOT / "dist"
 SITE = json.loads((ROOT / "site.json").read_text(encoding="utf-8"))
 MATERIALS = json.loads((SRC / "data" / "materials.json").read_text(encoding="utf-8"))
 LANGS = ("en", "id")
