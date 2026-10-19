@@ -120,3 +120,23 @@ What makes it fast, and what to keep doing
 
 Palette note: the reference image prints Dark Moss Green as `#283B0A` in HEX, `67, 89, 45` in RGB and a third value in CMYK.
 The swatch itself is `#43592D` (the RGB value), so that is what this site uses.
+
+
+## 8. v5 update: About, supplier and buyer flows
+
+**Menu (EN / ID):** Home / Beranda · About Us / Tentang Kami · Materials Catalogue / Katalog Material · Become a Supplier / Jadi Supplier · For Buyers / Untuk Buyer · Contact Us / Hubungi Kami. Processed Products and How We Work moved to the footer (and stay linked from the homepage and catalogue).
+
+**New pages:** `become-a-supplier.html` / `jadi-supplier.html`, `for-buyers.html` / `untuk-buyer.html`. `contact.html` is now a hub (supplier vs buyer options). `about.html` has overview, vision, mission, values and a company-profile section.
+
+**Settings in `site.json`** (empty = feature hidden, never a dead button):
+- `whatsapp`, `contacts`: existing numbers.
+- `email`: company email. Leave `""` until confirmed; email buttons and footer line appear automatically once set.
+- `inquiry_endpoint`: URL of a form service (see below). Empty = buyer form hands off to WhatsApp instead of posting.
+- `profile_pdf`: path/URL of a company profile PDF (e.g. `assets/bms-profile.pdf`). Empty = "Request the company profile" via WhatsApp.
+- `about_draft`: `true` shows the "Draft wording" tag on vision, mission and values. Set `false` once BMS has approved the text (edit it in `site-src/pages/about.html`).
+
+**Buyer enquiries to email (needs one setup step).** A static site cannot send email by itself. Create a form at a service such as Formspree (or any endpoint that accepts a JSON POST and returns 2xx), point it at the BMS email, paste its URL into `inquiry_endpoint`, rebuild. The page shows "Thank you" only when the service answers OK; on any error it shows a failure message with a WhatsApp fallback. The payload includes the selected material (`material`, `material_slug`).
+
+**Supplier form** composes a WhatsApp message (no backend). The visitor must tap send, and the page says so.
+
+Build and deploy: `pip install jinja2 rcssmin rjsmin`, `python3 build.py`, then copy the contents of `dist/` to the repo root (as before) and push.

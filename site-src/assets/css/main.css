@@ -298,3 +298,43 @@ img{max-width:100%;height:auto}
 .ind-img{display:block;width:100%;aspect-ratio:8/5;object-fit:cover}
 .ind-ph{background:repeating-linear-gradient(135deg,var(--paper-2) 0 12px,var(--paper) 12px 24px);border-bottom:1px solid var(--line)}
 .ind h3{margin:0;padding:14px 16px}
+
+/* ---------- v5: about, supplier/buyer pages, forms ---------- */
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.menu-foot .btn-line{border-color:var(--deep);color:var(--deep)}
+.menu-foot .btn-line:hover{background:var(--deep);color:var(--forest)}
+.ftr-links{display:flex;flex-wrap:wrap;gap:4px 20px;grid-column:1/-1;margin-top:6px!important}
+.cols-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:960px){.cols-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.cols-4{grid-template-columns:1fr}}
+.draft-tag{display:inline-block;margin:0 0 14px;padding:3px 10px;border:1.5px dashed var(--noir);border-radius:999px;font:600 .72rem/1.4 ui-monospace,Menlo,monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--noir)}
+.vm-card .eyebrow{margin-bottom:.5rem}
+.vm-vision{font:600 1.35rem/1.35 var(--serif);color:var(--deep)!important;margin:0}
+.ticks{display:grid;gap:10px}
+.ticks li{position:relative;padding-left:26px;color:var(--noir)}
+.ticks li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:12px;border-radius:50%;background:var(--forest)}
+.profile{display:grid;grid-template-columns:1fr auto;gap:20px 40px;align-items:center}
+.profile h2{margin-bottom:.3em}
+.profile p{margin:0;max-width:620px}
+@media(max-width:760px){.profile{grid-template-columns:1fr}}
+.sub{margin-top:28px}
+.channels{display:grid;gap:16px}
+.channel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.channel p{color:var(--muted)}
+.channel h3{margin-bottom:.3em}
+.card-h{font-size:1.35rem}
+.stack{display:grid;gap:10px;margin-top:16px}
+.contact-cols{align-items:start}
+.contact-cols .card p{margin:0}
+.form h3{margin-bottom:.3em}
+.form input[type=email]{width:100%;padding:11px 12px;border:1.5px solid var(--line-2);border-radius:6px;background:#fff;color:var(--deep);font:inherit}
+.form input[type=email]:focus{outline:3px solid var(--gold);outline-offset:0;border-color:var(--noir)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.err.show{display:block}
+.sent-bad{border-left-color:#8c2f12}
+.btn[disabled]{opacity:.65;cursor:progress;transform:none}
+.info p{margin:0 0 1em}
+.info .actions{margin-bottom:16px}
+.info .btn-line{border-color:var(--deep);color:var(--deep)}
+.info .btn-line:hover{background:var(--deep);color:var(--forest)}
+.info-link{margin:0!important}

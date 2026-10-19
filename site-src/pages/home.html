@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "partials/macros.html" import cta, ribbon, contact_btn with context %}
+{% from "partials/macros.html" import cta, ribbon with context %}
 {% block title %}{{ site.name }} ({{ site.short }}) | {{ L('Agricultural Commodities, Supplied to Your Business', 'Komoditas Pertanian, Dipasok untuk Bisnis Anda') }}{% endblock %}
 {% block desc %}{{ L('Jakarta-based Indonesian trading company. We aggregate agricultural commodities, bio-based and industrial materials from suppliers and sell them to business buyers.', 'Perusahaan perdagangan Indonesia berbasis Jakarta. Kami mengumpulkan komoditas pertanian, bahan berbasis hayati, dan material industri dari pemasok dan menjualnya kepada pembeli bisnis.') }}{% endblock %}
 {% block head %}
@@ -11,9 +11,10 @@
     <div>
       <p class="eyebrow">{{ site.name }} &middot; Jakarta, Indonesia</p>
       <h1 id="h1">{{ L('Agricultural commodities, supplied to your business', 'Komoditas pertanian, dipasok untuk bisnis Anda') }}</h1>
-      <p class="lead">{{ L('BMS aggregates supply from suppliers across Indonesia and sells it to manufacturers, processors and industrial buyers. Tell us what your business needs and we supply it.', 'BMS mengumpulkan pasokan dari pemasok di seluruh Indonesia dan menjualnya kepada produsen, pengolah, dan pembeli industri. Beri tahu kami kebutuhan bisnis Anda, kami yang memasoknya.') }}</p>
+      <p class="lead">{{ L('BMS connects suppliers across Indonesia with business buyers. We aggregate agricultural and bio-based materials and supply them to manufacturers, processors and industrial buyers.', 'BMS menghubungkan pemasok di seluruh Indonesia dengan pembeli bisnis. Kami mengumpulkan bahan pertanian dan berbasis hayati, lalu memasoknya kepada produsen, pengolah, dan pembeli industri.') }}</p>
       <div class="actions">
-        {{ contact_btn('', 'btn-gold btn-lg') }}
+        <a class="btn btn-gold btn-lg" href="{{ url('about') }}">{{ L('About Us', 'Tentang Kami') }}</a>
+        <a class="btn btn-line btn-lg" href="{{ url('catalogue') }}">{{ L('Materials Catalogue', 'Katalog Material') }}</a>
       </div>
     </div>
     <svg class="net" viewBox="0 0 520 400" role="img" aria-label="{{ L('Suppliers to BMS to buyers', 'Pemasok ke BMS ke pembeli') }}">
@@ -32,8 +33,8 @@
 
 <div class="ribbons">
   {{ ribbon('maize', url('catalogue'), L('Catalogue', 'Katalog'), L('%d materials, one supplier' % materials|length, '%d material, satu pemasok' % materials|length), L('Agricultural commodities, bio-based materials and industrial resources.', 'Komoditas pertanian, bahan berbasis hayati, dan sumber daya industri.')) }}
-  {{ ribbon('gold', url('contact') ~ '?intent=have', L('For suppliers', 'Untuk pemasok'), L('Have a harvest or stock to supply?', 'Punya hasil panen atau stok untuk dipasok?'), L('Tell us what you have. BMS aggregates it.', 'Beri tahu kami apa yang Anda miliki. BMS yang mengumpulkannya.')) }}
-  {{ ribbon('moss', url('contact') ~ '?intent=need', L('For buyers', 'Untuk pembeli'), L('Looking for a material?', 'Mencari material?'), L('Tell us what you need and BMS supplies it.', 'Beri tahu kami kebutuhan Anda, BMS yang memasoknya.')) }}
+  {{ ribbon('gold', url('supply'), L('For suppliers', 'Untuk supplier'), L('Have a harvest or stock to supply?', 'Punya hasil panen atau stok untuk dipasok?'), L('Offer it to BMS by WhatsApp, email or a short form.', 'Tawarkan ke BMS lewat WhatsApp, email, atau formulir singkat.')) }}
+  {{ ribbon('moss', url('buy'), L('For buyers', 'Untuk buyer'), L('Looking for a material?', 'Mencari material?'), L('Choose a material and send an enquiry to BMS.', 'Pilih material dan kirim permintaan ke BMS.')) }}
   {{ ribbon('noir', url('process'), L('How We Work', 'Cara Kerja'), L('Supplier, BMS, business opportunity', 'Pemasok, BMS, peluang bisnis'), L('We aggregate supply and sell it on.', 'Kami mengumpulkan pasokan dan menjualnya.')) }}
 </div>
 
