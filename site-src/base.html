@@ -60,13 +60,13 @@
       <nav aria-label="{{ L('Primary', 'Utama') }}">
         <ul class="menu-links">
           {% for k, label in nav %}
-          <li><a href="{{ url(k) }}"{% if active == k %} aria-current="page"{% endif %}>{{ label }}</a></li>
+          <li{% if k in ('supply', 'buy') %} class="menu-journey"{% endif %}><a href="{{ url(k) }}"{% if active == k %} aria-current="page"{% endif %}>{{ label }}</a></li>
           {% endfor %}
-          <li><a href="{{ url('contact') }}"{% if active == 'contact' %} aria-current="page"{% endif %}>{{ L('Contact', 'Hubungi Kami') }}</a></li>
         </ul>
       </nav>
       <div class="menu-foot">
         <a class="btn btn-gold" href="https://wa.me/{{ site.whatsapp }}" target="_blank" rel="noopener">{{ L('Chat on WhatsApp', 'Chat via WhatsApp') }}</a>
+        {% if site.email %}<a class="btn btn-line" href="mailto:{{ site.email }}">{{ L('Email us', 'Kirim email') }}</a>{% endif %}
         {% set soc = {'instagram': ic.ICON_instagram, 'linkedin': ic.ICON_linkedin, 'facebook': ic.ICON_facebook} %}
         {% if site.social.values()|select|list %}
         <ul class="social">
@@ -93,6 +93,11 @@
         {% for c in site.contacts %}
         <li>{{ c.name }} &middot; <a href="https://wa.me/{{ c.e164 }}" target="_blank" rel="noopener">{{ c.display }}</a></li>
         {% endfor %}
+        {% if site.email %}<li>Email &middot; <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>{% endif %}
+      </ul>
+      <ul class="ftr-links" aria-label="{{ L('More pages', 'Halaman lainnya') }}">
+        <li><a href="{{ url('products') }}">{{ L('Processed Products', 'Produk Olahan') }}</a></li>
+        <li><a href="{{ url('process') }}">{{ L('How We Work', 'Cara Kerja') }}</a></li>
       </ul>
       <p class="ftr-copy">&copy; {{ year }} {{ site.name }}</p>
     </div>

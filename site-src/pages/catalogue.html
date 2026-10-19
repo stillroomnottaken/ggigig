@@ -20,17 +20,23 @@
       <button class="filter" type="button" data-filter="{{ c }}" aria-pressed="false">{{ label }}</button>
       {% endfor %}
     </div>
-    <div class="mat-grid">
+    <div class="mat-grid" id="matGrid">
       {% for m in materials %}
       {% set name = m.name[lang] %}
-      <article class="mat" data-cat="{{ m.cat }}">
-        <div class="mat-body mat-head"><h3>{% if m.get('detail') %}<a href="{{ m.slug }}.html">{{ name }}</a>{% else %}{{ name }}{% endif %}</h3></div>
-        {% if m.get('image') %}<img class="mat-img" src="{{ asset('img/' ~ m.image) }}" alt="{{ name }}" width="640" height="360" loading="lazy" decoding="async">{% else %}<div class="mat-img mat-ph" role="img" aria-label="{{ name }}"></div>{% endif %}
+      <article class="mat{% if not m.get('image') %} mat-noimg{% if m.get('icon') %} mat-icononly{% endif %}{% endif %}" data-cat="{{ m.cat }}">
+        <div class="mat-media">
+          {% if m.get('image') %}<img class="mat-photo" src="{{ asset('img/' ~ m.image) }}" alt="{{ name }}" width="800" height="800" loading="lazy" decoding="async">{% elif not m.get('icon') %}<span class="mat-mono" aria-hidden="true">{{ m.get('mono', name[:2]) }}</span>{% endif %}
+          {% if m.get('icon') %}<span class="mat-icon" aria-hidden="true" style="background-image:url('{{ asset('img/' ~ m.icon) }}')"></span>{% endif %}
+        </div>
         <div class="mat-body">
-          <div class="mat-cta">
-            <small>{{ L('Contact us about this', 'Hubungi kami tentang ini') }}</small>
-            {{ pair(m.slug) }}
+          <div class="mat-top">
+            <h3>{% if m.get('detail') %}<a href="{{ m.slug }}.html">{{ name }}</a>{% else %}{{ name }}{% endif %}</h3>
+            <span class="mat-tag t-{{ m.cat }}">{{ cats[m.cat] }}</span>
           </div>
+        </div>
+        <div class="mat-foot">
+          <small>{{ L('Contact us about this', 'Hubungi kami tentang ini') }}</small>
+          {{ pair(m.slug) }}
         </div>
       </article>
       {% endfor %}
@@ -38,10 +44,10 @@
         <div class="mat-body">
           <h3>{{ L('Not listed?', 'Tidak ada di daftar?') }}</h3>
           <p>{{ L('Other relevant industrial materials are welcome. Tell us what you need or can supply.', 'Material industri lain yang relevan juga kami terima. Beri tahu kami apa yang Anda butuhkan atau bisa pasok.') }}</p>
-          <div class="mat-cta">
-            <small>{{ L('Contact us about this', 'Hubungi kami tentang ini') }}</small>
-            {{ pair('other') }}
-          </div>
+        </div>
+        <div class="mat-foot">
+          <small>{{ L('Contact us about this', 'Hubungi kami tentang ini') }}</small>
+          {{ pair('other') }}
         </div>
       </article>
     </div>

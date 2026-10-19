@@ -2,11 +2,12 @@
  {
   "slug": "cocoa",
   "cat": "agri",
-  "image": "",
+  "image": "materials/cocoa.webp",
   "name": {
    "en": "Cocoa",
    "id": "Kakao"
-  }
+  },
+  "icon": "materials/cocoa-icon.webp"
  },
  {
   "slug": "candlenuts",
@@ -15,7 +16,8 @@
   "name": {
    "en": "Candlenuts",
    "id": "Kemiri"
-  }
+  },
+  "mono": "CN"
  },
  {
   "slug": "corn-cobs",
@@ -25,7 +27,8 @@
   "name": {
    "en": "Corn Cobs",
    "id": "Tongkol Jagung"
-  }
+  },
+  "icon": "materials/corn-cobs-icon.webp"
  },
  {
   "slug": "rubber-seeds",
@@ -34,7 +37,8 @@
   "name": {
    "en": "Rubber Seeds",
    "id": "Biji Karet"
-  }
+  },
+  "mono": "RS"
  },
  {
   "slug": "rubber-seed-oil",
@@ -43,7 +47,8 @@
   "name": {
    "en": "Rubber Seed Oil",
    "id": "Minyak Biji Karet"
-  }
+  },
+  "mono": "RSO"
  },
  {
   "slug": "palm-based-derivatives",
@@ -52,7 +57,8 @@
   "name": {
    "en": "Palm-Based Derivatives",
    "id": "Turunan Kelapa Sawit"
-  }
+  },
+  "mono": "PD"
  },
  {
   "slug": "cnsl",
@@ -61,7 +67,8 @@
   "name": {
    "en": "CNSL",
    "id": "CNSL"
-  }
+  },
+  "icon": "materials/cnsl-icon.webp"
  },
  {
   "slug": "uco",
@@ -70,7 +77,8 @@
   "name": {
    "en": "UCO",
    "id": "UCO"
-  }
+  },
+  "mono": "UCO"
  },
  {
   "slug": "pome",
@@ -79,7 +87,8 @@
   "name": {
    "en": "POME",
    "id": "POME"
-  }
+  },
+  "mono": "POME"
  },
  {
   "slug": "petrochemicals",
@@ -88,6 +97,7 @@
   "name": {
    "en": "Petrochemicals",
    "id": "Petrokimia"
-  }
+  },
+  "mono": "PC"
  }
 ]
