@@ -4,7 +4,7 @@
   "nib": "0807240054536",
   "base_url": "",
   "whatsapp": "6281289090842",
-  "email": "",
+  "email": "ptcontactbms@gmail.com",
   "inquiry_endpoint": "",
   "profile_pdf": "",
   "about_draft": true,
@@ -49,14 +49,6 @@
     "contact": {
       "en": "contact",
       "id": "kontak"
-    },
-    "products": {
-      "en": "products",
-      "id": "produk-olahan"
-    },
-    "process": {
-      "en": "how-we-work",
-      "id": "cara-kerja"
     }
   }
 }

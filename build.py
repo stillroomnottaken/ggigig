@@ -93,8 +93,6 @@ def render_all():
             nav=[("home", L("Home", "Beranda")),
                  ("about", L("About Us", "Tentang Kami")),
                  ("catalogue", L("Materials Catalogue", "Katalog Material")),
-                 ("supply", L("Become a Supplier", "Jadi Supplier")),
-                 ("buy", L("For Buyers", "Untuk Buyer")),
                  ("contact", L("Contact Us", "Hubungi Kami"))],
             languages=LANGS,
             detail_slugs=detail_slugs,
