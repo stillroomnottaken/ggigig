@@ -1,103 +1,93 @@
 [
- {
-  "slug": "cocoa",
-  "cat": "agri",
-  "image": "materials/cocoa.webp",
-  "name": {
-   "en": "Cocoa",
-   "id": "Kakao"
+  {
+    "slug": "corn-cobs",
+    "cat": "agri",
+    "detail": true,
+    "image": "",
+    "name": {
+      "en": "Corn Cobs",
+      "id": "Tongkol Jagung"
+    }
   },
-  "icon": "materials/cocoa-icon.webp"
- },
- {
-  "slug": "candlenuts",
-  "cat": "agri",
-  "image": "",
-  "name": {
-   "en": "Candlenuts",
-   "id": "Kemiri"
+  {
+    "slug": "cocoa",
+    "cat": "agri",
+    "image": "",
+    "name": {
+      "en": "Cocoa",
+      "id": "Kakao"
+    }
   },
-  "mono": "CN"
- },
- {
-  "slug": "corn-cobs",
-  "cat": "agri",
-  "detail": true,
-  "image": "",
-  "name": {
-   "en": "Corn Cobs",
-   "id": "Tongkol Jagung"
+  {
+    "slug": "candlenuts",
+    "cat": "agri",
+    "image": "",
+    "name": {
+      "en": "Candlenuts",
+      "id": "Kemiri"
+    }
   },
-  "icon": "materials/corn-cobs-icon.webp"
- },
- {
-  "slug": "rubber-seeds",
-  "cat": "agri",
-  "image": "",
-  "name": {
-   "en": "Rubber Seeds",
-   "id": "Biji Karet"
+  {
+    "slug": "rubber-seeds",
+    "cat": "agri",
+    "image": "",
+    "name": {
+      "en": "Rubber Seeds",
+      "id": "Biji Karet"
+    }
   },
-  "mono": "RS"
- },
- {
-  "slug": "rubber-seed-oil",
-  "cat": "bio",
-  "image": "",
-  "name": {
-   "en": "Rubber Seed Oil",
-   "id": "Minyak Biji Karet"
+  {
+    "slug": "rubber-seed-oil",
+    "cat": "bio",
+    "image": "",
+    "name": {
+      "en": "Rubber Seed Oil",
+      "id": "Minyak Biji Karet"
+    }
   },
-  "mono": "RSO"
- },
- {
-  "slug": "palm-based-derivatives",
-  "cat": "bio",
-  "image": "",
-  "name": {
-   "en": "Palm-Based Derivatives",
-   "id": "Turunan Kelapa Sawit"
+  {
+    "slug": "palm-based-derivatives",
+    "cat": "bio",
+    "image": "",
+    "name": {
+      "en": "Palm-Based Derivatives",
+      "id": "Turunan Kelapa Sawit"
+    }
   },
-  "mono": "PD"
- },
- {
-  "slug": "cnsl",
-  "cat": "bio",
-  "image": "",
-  "name": {
-   "en": "CNSL",
-   "id": "CNSL"
+  {
+    "slug": "cnsl",
+    "cat": "bio",
+    "image": "",
+    "name": {
+      "en": "CNSL",
+      "id": "CNSL"
+    }
   },
-  "icon": "materials/cnsl-icon.webp"
- },
- {
-  "slug": "uco",
-  "cat": "bio",
-  "image": "",
-  "name": {
-   "en": "UCO",
-   "id": "UCO"
+  {
+    "slug": "uco",
+    "cat": "bio",
+    "image": "",
+    "name": {
+      "en": "UCO",
+      "id": "UCO"
+    }
   },
-  "mono": "UCO"
- },
- {
-  "slug": "pome",
-  "cat": "bio",
-  "image": "",
-  "name": {
-   "en": "POME",
-   "id": "POME"
+  {
+    "slug": "pome",
+    "cat": "bio",
+    "image": "",
+    "name": {
+      "en": "POME",
+      "id": "POME"
+    }
   },
-  "mono": "POME"
- },
- {
-  "slug": "petrochemicals",
-  "cat": "industrial",
-  "image": "",
-  "name": {
-   "en": "Petrochemicals",
-   "id": "Petrokimia"
-  },
-  "mono": "PC"
- }
+  {
+    "slug": "petrochemicals",
+    "cat": "industrial",
+    "image": "",
+    "name": {
+      "en": "Petrochemicals",
+      "id": "Petrokimia"
+    }
+  }
 ]
