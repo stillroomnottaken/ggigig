@@ -17,20 +17,17 @@
       <div class="card">
         <p class="eyebrow">{{ L('I am a supplier', 'Saya supplier') }}</p>
         <h2 class="card-h">{{ L('Offer materials to BMS', 'Tawarkan material ke BMS') }}</h2>
-        <p>{{ L('WhatsApp is the quickest way. Email suits formal proposals.', 'WhatsApp paling cepat. Email cocok untuk proposal formal.') }}</p>
+        <p>{{ L('Send us a message and we will reply.', 'Kirim pesan dan kami akan membalas.') }}</p>
         <div class="stack">
-          {{ wa_btn(L('WhatsApp', 'WhatsApp'), L('Hello BMS, I would like to offer materials as a supplier.', 'Halo BMS, saya ingin menawarkan material sebagai supplier.'), 'btn-gold') }}
-          {{ mail_btn(L('Email', 'Email'), L('Supplier enquiry', 'Penawaran supplier')) }}
-          <a class="btn btn-line" href="{{ url('supply') }}">{{ L('Supplier page and short form', 'Halaman supplier dan formulir singkat') }}</a>
+          {{ wa_btn(L('CONTACT US', 'HUBUNGI KAMI'), L('Hello BMS, I would like to offer materials as a supplier.', 'Halo BMS, saya ingin menawarkan material sebagai supplier.'), 'btn-gold') }}
         </div>
       </div>
       <div class="card">
         <p class="eyebrow">{{ L('I am a buyer', 'Saya buyer') }}</p>
         <h2 class="card-h">{{ L('Ask BMS for a material', 'Tanyakan material ke BMS') }}</h2>
-        <p>{{ L('The enquiry form captures what you need. WhatsApp is there if you prefer to chat.', 'Formulir permintaan mencatat kebutuhan Anda. WhatsApp tersedia jika Anda lebih suka chat.') }}</p>
+        <p>{{ L('Tell us what you need and we will reply.', 'Sampaikan kebutuhan Anda dan kami akan membalas.') }}</p>
         <div class="stack">
-          <a class="btn btn-forest" href="{{ url('buy') }}">{{ L('Send an enquiry', 'Kirim permintaan') }}</a>
-          {{ wa_btn(L('WhatsApp', 'WhatsApp'), L('Hello BMS, I would like to ask about a material.', 'Halo BMS, saya ingin menanyakan sebuah material.'), 'btn-line') }}
+          {{ wa_btn(L('CONTACT US', 'HUBUNGI KAMI'), L('Hello BMS, I would like to ask about a material.', 'Halo BMS, saya ingin menanyakan sebuah material.'), 'btn-forest') }}
         </div>
       </div>
     </div>
@@ -39,9 +36,8 @@
       <h2>{{ site.name }}</h2>
       <p>Jakarta, Indonesia</p>
       <dl>
-        {% for c in site.contacts %}
-        <div><dt>{{ c.name }}</dt><dd><a href="https://wa.me/{{ c.e164 }}" target="_blank" rel="noopener">{{ c.display }}</a></dd></div>
-        {% endfor %}
+        {% set c = site.contacts[0] %}
+        <div><dt>{{ L('Phone', 'Telepon') }}</dt><dd><a href="https://wa.me/{{ c.e164 }}" target="_blank" rel="noopener">{{ c.display }}</a></dd></div>
         {% if site.email %}<div><dt>Email</dt><dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd></div>{% endif %}
         <div><dt>NIB</dt><dd>{{ site.nib }}</dd></div>
       </dl>

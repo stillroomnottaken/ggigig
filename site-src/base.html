@@ -87,12 +87,12 @@
     <div class="wrap ftr-grid">
       <div>
         <strong class="ftr-name">{{ site.name }}</strong>
-        <p>Jakarta, Indonesia &middot; NIB {{ site.nib }}</p>
+        <p>Jakarta, Indonesia</p>
+        <p>NIB {{ site.nib }}</p>
       </div>
       <ul class="ftr-contacts">
-        {% for c in site.contacts %}
-        <li>{{ c.name }} &middot; <a href="https://wa.me/{{ c.e164 }}" target="_blank" rel="noopener">{{ c.display }}</a></li>
-        {% endfor %}
+        {% set c = site.contacts[0] %}
+        <li><a href="https://wa.me/{{ c.e164 }}" target="_blank" rel="noopener">{{ c.display }}</a></li>
         {% if site.email %}<li>Email &middot; <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>{% endif %}
       </ul>
       <ul class="ftr-links" aria-label="{{ L('More pages', 'Halaman lainnya') }}">

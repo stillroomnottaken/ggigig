@@ -103,12 +103,11 @@ export const PAGES: Page[] = [
       sec("about-body", "content", "Company story and facts", { layout: "columns", columns: 2, gap: 40 }, [
         cont("about-l", [
           h("about-h2", 2, "Growing step by step", "Bertumbuh selangkah demi selangkah"),
-          p("about-p", "BMS aggregates supply from a growing base of suppliers across Indonesia and sells it to business buyers, developing toward Asia-Pacific and international markets.", "BMS mengumpulkan pasokan dari basis pemasok yang terus bertambah di seluruh Indonesia dan menjualnya kepada pembeli bisnis, bergerak menuju pasar Asia-Pasifik dan internasional."),
+          p("about-p", "BMS aggregates supply from a growing base of suppliers across Indonesia and sells it to business buyers, developing toward international markets.", "BMS mengumpulkan pasokan dari basis pemasok yang terus bertambah di seluruh Indonesia dan menjualnya kepada pembeli bisnis, bergerak menuju pasar internasional."),
           cont("about-steps", [
             { ...base("st1"), type: "card", variant: "step", title: L("Indonesia", "Indonesia"), text: L("Home market", "Pasar utama"), src: "" },
-            { ...base("st2"), type: "card", variant: "step", title: L("Asia-Pacific", "Asia-Pasifik"), text: L("Developing", "Berkembang"), src: "" },
             { ...base("st3"), type: "card", variant: "step", title: L("International", "Internasional"), text: L("Growth ahead", "Pertumbuhan ke depan"), src: "" },
-          ], { layout: "grid", columns: 3, gap: 8 }),
+          ], { layout: "grid", columns: 2, gap: 8 }),
         ]),
         { ...base("about-facts"), type: "facts", rows: [
           fact("f1", ["Company", "Perusahaan"], same(SITE_NAME)), fact("f2", ["Type", "Jenis"], ["Indonesian trading company", "Perusahaan perdagangan Indonesia"]),
